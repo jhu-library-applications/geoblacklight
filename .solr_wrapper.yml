@@ -1,0 +1,10 @@
+url: https://archive.apache.org/dist/lucene/solr/8.4.1/solr-8.4.1.zip
+validate: false
+instance_dir: tmp/solr
+download_dir: tmp/solr
+
+# Place any default configuration for solr_wrapper here
+# port: 8983
+collection:
+  dir: solr/conf/
+  name: blacklight-core
