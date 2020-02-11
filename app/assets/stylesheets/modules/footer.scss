@@ -1,0 +1,39 @@
+footer {
+  // font-family: 'Gentona', sans-serif; @TODO: #14
+  margin-top:2rem;
+  padding-top:2rem;
+  background-color: #2c2c33;
+  color: $white;
+
+  a {
+    color: #a6bbd5;
+  }
+
+  a:hover {
+    text-decoration: underline;
+    color: #a6bbd5;
+  }
+
+  a h2 {
+    color: $white;
+  }
+
+  a.logo:hover {
+    text-decoration: none;
+  }
+
+  h2 {
+    margin-bottom:2rem;
+  }
+
+  ul.contact a.cont-email {
+    background-image: asset_url("icon-email-gold.svg");
+  }
+
+  ul.contact a {
+    padding: .25em 0 .25em 30px;
+    background-size: 18px 18px;
+    background-position: 0 center;
+    background-repeat: no-repeat;
+  }
+}
