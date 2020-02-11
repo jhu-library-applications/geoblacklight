@@ -1,5 +1,10 @@
 Rails.application.routes.draw do
 
+  # Static Pages via High Voltage
+  get 'about' => 'high_voltage/pages#show', id: 'about'
+  get 'contact' => 'high_voltage/pages#show', id: 'contact'
+  get 'help' => 'high_voltage/pages#show', id: 'help'
+
   mount Blacklight::Engine => '/'
   root to: "catalog#index"
   concern :searchable, Blacklight::Routes::Searchable.new
