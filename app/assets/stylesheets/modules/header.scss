@@ -1,29 +1,38 @@
 #topnav-container {
-  padding: 2px 0;
+  border-top: 3px solid $light-gray;
   position: relative;
 }
 
 #topnav {
   background: none;
   border: 0;
-  height: 75px;
+  height: 134px;
   margin-bottom: 0;
-  padding: 2px 0;
+  padding: 0px;
 
   a img {
     float: left;
+    margin-left:1rem;
   }
 
-  h1 {
-    border-left: 1px solid $blue;
-    display:inline;
-    position: relative;
-    top:1rem;
-    left:1rem;
-    padding-left:1rem;
-    font-weight: normal;
-    font-size:1.75rem;
-    color:$blue;
+  .site-name {
+    h1 {
+      border-left: 1px solid $black;
+      display:inline;
+      position: relative;
+      top:4rem;
+      left:1rem;
+      padding: 1rem;
+      padding-left:2rem;
+      margin-left:0.75rem;
+      font-weight: normal;
+      font-size:1.75rem;
+      color:$black;
+
+      a {
+        color:$black;
+      }
+    }
   }
 
   .topnav-links {
