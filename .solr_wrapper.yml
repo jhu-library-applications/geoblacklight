@@ -4,7 +4,7 @@ instance_dir: tmp/solr
 download_dir: tmp/solr
 
 # Place any default configuration for solr_wrapper here
-# port: 8983
+port: <%= ENV['SOLR_URL'] %>
 collection:
   dir: solr/conf/
   name: blacklight-core
