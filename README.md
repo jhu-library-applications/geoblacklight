@@ -37,7 +37,7 @@ bundle
 The rake task below will spin up Solr, index the test fixture documents, and start Puma the default Rails web server.
 
 ```bash
-bundle exec geoblacklight:server
+bundle exec jhu:server
 ```
 
 * View the application at [http://localhost:3000](http://localhost:3000)
