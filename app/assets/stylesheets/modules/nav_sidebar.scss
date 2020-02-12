@@ -1,0 +1,30 @@
+// Static page navigation
+.nav.nav-sidebar {
+  margin-left:0;
+}
+
+.nav.nav-sidebar>li{
+  margin-bottom: 0.5em;
+}
+
+.nav.nav-sidebar>li>a{
+  border-left:4px solid $light-gray;
+  background-color: $light-gray;
+}
+
+.nav.nav-sidebar>li>a.active {
+  border-left:4px solid $blue;
+  background-color: $light-gray;
+  font-weight: bold;
+}
+
+.nav.nav-sidebar>li>a:hover{
+  color:inherit;
+  border-left:4px solid $blue;
+  background-color: $light-gray;
+  font-weight: bold;
+}
+
+.nav.nav-sidebar>li>a.active {
+  border-left:4px solid $blue;
+}

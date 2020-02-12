@@ -66,7 +66,7 @@ gem 'bootstrap', '~> 4.0'
 gem 'twitter-typeahead-rails', '0.11.1.pre.corejavascript'
 gem 'devise'
 gem 'devise-guests', '~> 0.6'
-group :development, :test do
-end
-
 gem 'jquery-rails'
+
+# Static Pages
+gem 'high_voltage', '~> 3.1'

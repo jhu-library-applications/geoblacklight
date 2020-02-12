@@ -24,5 +24,14 @@ $green:   #28a745 !default;
 $teal:    #20c997 !default;
 $cyan:    #17a2b8 !default;
 
+// JHU Colors
+$light-gray: #e9ecef !default;
+
 // Example: Bootstrap Link color
 $link-color: $blue;
+
+.bg-jhu-blue{background-color: $blue;}
+.bg-jhu-gray{background-color: $light-gray;}
+
+// Homepage Images
+.home-page-linked-searches img { width: 100%;}

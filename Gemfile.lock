@@ -168,6 +168,7 @@ GEM
       execjs (~> 2.0)
       sprockets (>= 2.0.0)
       tilt (>= 1.2)
+    high_voltage (3.1.2)
     i18n (1.8.2)
       concurrent-ruby (~> 1.0)
     jbuilder (2.10.0)
@@ -346,6 +347,7 @@ DEPENDENCIES
   devise-guests (~> 0.6)
   dotenv-rails
   geoblacklight (~> 2.0)
+  high_voltage (~> 3.1)
   jbuilder (~> 2.7)
   jquery-rails
   listen (>= 3.0.5, < 3.2)

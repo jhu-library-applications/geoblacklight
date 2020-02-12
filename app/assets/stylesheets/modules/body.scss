@@ -1,0 +1,58 @@
+@font-face {
+  font-family:'Gentona';
+  src:font-url('Gentona-Book.eot');
+  src:font-url('Gentona-Book.eot?#iefix') format("embedded-opentype"),
+      font-url('Gentona-Book.woff') format("woff"),
+      font-url('Gentona-Book.ttf') format("truetype");
+  font-weight:normal;
+  font-style:normal
+}
+
+@font-face{
+  font-family:'Gentona';
+  src:font-url('Gentona-BookItalic.eot');
+  src:font-url('Gentona-BookItalic.eot?#iefix') format("embedded-opentype"),
+      font-url('Gentona-BookItalic.woff') format("woff"),
+      font-url('Gentona-BookItalic.ttf') format("truetype");
+  font-weight:normal;
+  font-style:italic;
+}
+
+@font-face{
+  font-family:'Gentona';
+  src:font-url('Gentona-SemiBold.eot');
+  src:font-url('Gentona-SemiBold.eot?#iefix') format("embedded-opentype"),
+      font-url('Gentona-SemiBold.woff') format("woff"),
+      font-url('Gentona-SemiBold.ttf') format("truetype");
+  font-weight:700;
+  font-style:normal;
+}
+
+@font-face{
+  font-family:'Gentona';
+  src:font-url('Gentona-SemiBoldItalic.eot');
+  src:font-url('Gentona-SemiBoldItalic.eot?#iefix') format("embedded-opentype"),
+      font-url('Gentona-SemiBoldItalic.woff') format("woff"),
+      font-url('Gentona-SemiBoldItalic.ttf') format("truetype");
+  font-weight:700;
+  font-style:italic;
+}
+
+@font-face{
+  font-family:'GentonaMedium';
+  src:font-url('Gentona-Medium.eot');
+  src:font-url('Gentona-Medium.eot?#iefix') format("embedded-opentype"),
+      font-url('Gentona-Medium.woff') format("woff"),
+      font-url('Gentona-Medium.ttf') format("truetype");
+  font-weight:normal;
+  font-style:normal;
+}
+
+body {
+  font-family: 'Gentona', sans-serif;
+  font-weight: lighter;
+}
+
+.documents-list, .document, .index_title {
+  font-size: 16px !important;
+}

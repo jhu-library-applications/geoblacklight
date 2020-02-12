@@ -1,0 +1,91 @@
+#topnav-container {
+  border-top: 3px solid $light-gray;
+  position: relative;
+}
+
+#topnav {
+  background: none;
+  border: 0;
+  height: 96px;
+  margin-bottom: 0;
+  padding: 0px;
+
+  a img {
+    float: left;
+    margin-left:1.1rem;
+  }
+
+  img.app-logo {
+    margin-top:0.5rem;
+    height: 80px;
+  }
+
+  .site-name {
+    h1 {
+      border-left: 1px solid $black;
+      display:inline;
+      position: relative;
+      top:2.5rem;
+      left:1rem;
+      padding: 0.75rem;
+      padding-left:1.25rem;
+      font-weight: normal;
+      font-size:1.5rem;
+      color:$black;
+
+      a {
+        color:$black;
+      }
+    }
+  }
+
+  .topnav-links {
+    float: right;
+    margin-top: 2px;
+  }
+
+  .navbar-nav {
+    display: inline;
+    list-style: none;
+    margin: 0;
+    padding-left: 0;
+  }
+
+  ul.navbar-nav > li {
+    display: inline;
+
+    a {
+      color: $blue;
+      text-decoration: none;
+
+      &:hover,
+      &:focus {
+        text-decoration: underline;
+      }
+    }
+
+    & > a {
+      padding: 0 .5rem;
+    }
+  }
+
+  .nav-element-divider {
+    color: $blue;
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+}
+@include media-breakpoint-up(xs) {
+  #topnav {
+    width: 100%;
+  }
+}
+
+// Keep application navbar links white
+.navbar-dark .navbar-nav .nav-link {
+  color: rgba(255, 255, 255, 0.95);
+}
+
+.navbar-dark .navbar-nav .nav-link:hover, .navbar-dark .navbar-nav .nav-link:focus {
+  color: rgba(255, 255, 255, 0.85);
+}
