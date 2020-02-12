@@ -6,7 +6,7 @@
 #topnav {
   background: none;
   border: 0;
-  height: 140px;
+  height: 96px;
   margin-bottom: 0;
   padding: 0px;
 
@@ -15,18 +15,22 @@
     margin-left:1.1rem;
   }
 
+  img.app-logo {
+    margin-top:0.5rem;
+    height: 80px;
+  }
+
   .site-name {
     h1 {
       border-left: 1px solid $black;
       display:inline;
       position: relative;
-      top:3.9rem;
+      top:2.5rem;
       left:1rem;
-      padding: 1rem;
-      padding-left:2rem;
-      margin-left:0.75rem;
+      padding: 0.75rem;
+      padding-left:1.25rem;
       font-weight: normal;
-      font-size:1.75rem;
+      font-size:1.5rem;
       color:$black;
 
       a {
