@@ -22,13 +22,11 @@ git clone git@github.com:jhu-sheridan-libraries/geoblacklight.git
 
 Duplicate the .example files in the project and remove the .example string from each of their filename. Configure each file as necessary, or keep the default values.
 
+```bash
 cp .example.env.development .env.development  
 cp .example.env.test .env.test  
-cp config/database.yml.example config/database.yml  
-
-* config/database.yml.example => config/database.yml
-* .example.env.development => .env.development
-* .example.env.test => .env.test
+cp config/database.yml.example config/database.yml
+```
 
 ### Bundle RubyGems
 
@@ -38,7 +36,7 @@ Test with Bundler 2.1.4
 bundle
 ```
 
-### Run the Database migrations
+### Run the Database Migrations
 
 ```bash
 bin/rails db:migrate RAILS_ENV=development
@@ -46,7 +44,7 @@ bin/rails db:migrate RAILS_ENV=development
 
 ### Run the Application
 
-The rake task below will spin up Solr, index the test fixture documents, and start Puma the default Rails web server.
+The rake task below will spin up Solr, index the test fixture documents, and start the default Rails web server.
 
 ```bash
 bundle exec rake jhu:server
