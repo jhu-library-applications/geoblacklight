@@ -23,14 +23,16 @@ git clone git@github.com:jhu-sheridan-libraries/geoblacklight.git
 Duplicate the .example files in the project and remove the .example string from each of their filename. Configure each file as necessary, or keep the default values.
 
 cp .example.env.development .env.development  
-cp .example.env.test .env.test. 
-cp config/database.yml.example config/database.yml. 
+cp .example.env.test .env.test  
+cp config/database.yml.example config/database.yml  
 
 * config/database.yml.example => config/database.yml
 * .example.env.development => .env.development
 * .example.env.test => .env.test
 
 ### Bundle RubyGems
+
+Test with Bundler 2.1.4
 
 ```bash
 bundle
