@@ -4,6 +4,7 @@
 }
 
 #topnav {
+  width:100%;
   background: none;
   border: 0;
   height: 96px;
@@ -75,11 +76,6 @@
     padding-right: 5px;
   }
 }
-@include media-breakpoint-up(xs) {
-  #topnav {
-    width: 100%;
-  }
-}
 
 // Keep application navbar links white
 .navbar-dark .navbar-nav .nav-link {
@@ -88,4 +84,29 @@
 
 .navbar-dark .navbar-nav .nav-link:hover, .navbar-dark .navbar-nav .nav-link:focus {
   color: rgba(255, 255, 255, 0.85);
+}
+
+.navbar-brand {
+  background: none;
+}
+
+@include media-breakpoint-down(sm) {
+  #topnav {
+    text-align:center;
+  }
+
+  #topnav a img {
+    float: none;
+    margin-left: 0px;
+  }
+
+  div.site-name {
+    display: none;
+  }
+}
+
+@include media-breakpoint-up(md) {
+  .navbar-brand {
+    display: none;
+  }
 }
