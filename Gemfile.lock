@@ -55,6 +55,11 @@ GEM
       jbuilder (~> 2.7)
       kaminari (>= 0.15)
       rails (>= 5.1, < 7)
+    blacklight_advanced_search (7.0.0)
+      blacklight (~> 7.0)
+      parslet
+    blacklight_range_limit (7.4.0)
+      blacklight (>= 7.0)
     bootsnap (1.4.5)
       msgpack (~> 1.0)
     bootstrap (4.4.1)
@@ -75,7 +80,18 @@ GEM
       capybara (>= 1.0, < 4)
       launchy
     childprocess (3.0.0)
+    chosen-rails (1.9.0)
+      coffee-rails (>= 3.2)
+      railties (>= 3.0)
+      sassc-rails (>= 2.1.2)
     coderay (1.1.2)
+    coffee-rails (5.0.0)
+      coffee-script (>= 2.2.0)
+      railties (>= 5.2.0)
+    coffee-script (2.4.1)
+      coffee-script-source
+      execjs
+    coffee-script-source (1.12.2)
     concurrent-ruby (1.1.5)
     config (2.2.1)
       deep_merge (~> 1.2, >= 1.2.1)
@@ -226,6 +242,7 @@ GEM
     nokogumbo (2.0.2)
       nokogiri (~> 1.8, >= 1.8.4)
     orm_adapter (0.5.0)
+    parslet (1.8.2)
     popper_js (1.16.0)
     public_suffix (4.0.3)
     puma (4.3.1)
@@ -346,11 +363,14 @@ PLATFORMS
 
 DEPENDENCIES
   blacklight (~> 7.0)
+  blacklight_advanced_search (~> 7.0)
+  blacklight_range_limit (~> 7.0)
   bootsnap (>= 1.4.2)
   bootstrap (~> 4.0)
   byebug
   capybara (>= 2.15)
   capybara-screenshot
+  chosen-rails
   devise
   devise-guests (~> 0.6)
   dotenv-rails
