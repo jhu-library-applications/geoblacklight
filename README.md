@@ -38,6 +38,12 @@ Test with Bundler 2.1.4
 bundle
 ```
 
+### Run the Database migrations
+
+```bash
+bin/rails db:migrate RAILS_ENV=development
+```
+
 ### Run the Application
 
 The rake task below will spin up Solr, index the test fixture documents, and start Puma the default Rails web server.
