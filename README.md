@@ -58,7 +58,7 @@ bundle exec rake jhu:server
 ### Optional - Index UMD documents from B1G Geoportal
 
 ```bash
-bundle exec rake jhu:big_index_umd_data
+bundle exec rake jhu:b1g_index_umd_data
 ```
 
 ### Run the Test Suite
