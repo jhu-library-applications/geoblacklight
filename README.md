@@ -37,11 +37,17 @@ bundle
 The rake task below will spin up Solr, index the test fixture documents, and start Puma the default Rails web server.
 
 ```bash
-bundle exec jhu:server
+bundle exec rake jhu:server
 ```
 
 * View the application at [http://localhost:3000](http://localhost:3000)
 * View the Solr admin panel at [http://localhost:8983](http://localhost:8983)
+
+### Optional - Index UMD documents from B1G Geoportal
+
+```bash
+bundle exec rake jhu:big_index_umd_data
+```
 
 ### Run the Test Suite
 
