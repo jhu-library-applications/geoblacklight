@@ -29,6 +29,7 @@ class HomepageTest < ApplicationSystemTestCase
 
     within("div#main-container") do
       assert page.has_content?("Discover and download GIS data and maps")
+      assert page.has_link?("Advanced")
       assert page.has_content?("Explore")
       assert page.has_content?("Hackerman Maps")
       assert page.has_content?("Maryland LiDAR")
