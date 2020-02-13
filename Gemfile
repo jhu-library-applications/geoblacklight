@@ -70,3 +70,4 @@ gem 'jquery-rails'
 
 # Static Pages
 gem 'high_voltage', '~> 3.1'
+gem 'down', '~>5.0'

@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<schema name="geoblacklight-schema" version="2.0">
+<schema name="geoblacklight-schema" version="1.7">
   <uniqueKey>layer_slug_s</uniqueKey>
   <fields>
     <field name="_version_" type="long"   stored="true" indexed="true"/>
     <field name="timestamp" type="date"   stored="true" indexed="true" default="NOW"/>
     <field name="layer_slug_s" type="string" stored="true" indexed="true" required="true"/>
     <field name="geoblacklight_version" type="string" stored="true" indexed="true"/>
-    <field name="uuid" type="string" stored="true" indexed="true"/><!-- deprecated -->
+    <field name="uuid"      type="string" stored="true" indexed="true"/><!-- deprecated -->
 
     <!-- core generated fields -->
     <field name="text" type="text_en" stored="false" indexed="true" multiValued="true"
@@ -21,7 +21,6 @@
     <dynamicField name="*_im"   type="int"     stored="true"  indexed="true" multiValued="true" />
     <dynamicField name="*_l"    type="long"    stored="true"  indexed="true"/>
     <dynamicField name="*_s"    type="string"  stored="true"  indexed="true"/>
-    <dynamicField name="*_sdv"    type="string"  stored="true"  indexed="true" docValues="true"/>
     <dynamicField name="*_ss"   type="string"  stored="true"  indexed="false"/>
     <dynamicField name="*_si"   type="string"  stored="false" indexed="true"/>
     <dynamicField name="*_sim"  type="string"  stored="false" indexed="true" multiValued="true" />
@@ -92,7 +91,7 @@
     <fieldType name="date" class="solr.TrieDateField" precisionStep="6" positionIncrementGap="0"/>
 
     <!-- A DateRange based date field for truly faster date range queries. -->
-    <fieldType name="dateRange" class="solr.DateRangeField"/>
+        <fieldType name="dateRange" class="solr.DateRangeField"/>
 
     <!--Binary data type. The data should be sent/retrieved in as Base64 encoded Strings -->
     <fieldtype name="binary" class="solr.BinaryField"/>
@@ -165,28 +164,24 @@
   </types>
 
   <!-- for scoring formula -->
-  <copyField source="b1g_code_s"         dest="b1g_code_ti"       maxChars="100"/>
-  <copyField source="b1g_genre_sm"       dest="b1g_genre_tmi"    maxChars="1000"/>
-  <copyField source="b1g_keyword_sm"     dest="b1g_keyword_tmi"      maxChars="10000"/>
-  <copyField source="dct_alternativeTitle_sm"    dest="dct_alternativeTitle_tmi"         maxChars="1000"/>
+  <copyField source="dct_spatial_sm"     dest="dct_spatial_tmi"     maxChars="10000"/>
+  <copyField source="dct_temporal_sm"    dest="dct_temporal_tmi"    maxChars="10000"/>
   <copyField source="dc_creator_sm"      dest="dc_creator_tmi"      maxChars="1000"/>
   <copyField source="dc_description_s"   dest="dc_description_ti"   maxChars="10000"/>
   <copyField source="dc_format_s"        dest="dc_format_ti"        maxChars="100"/>
-  <copyField source="dc_language_sm"     dest="dc_language_tmi"       maxChars="100"/>
-  <copyField source="dc_publisher_sm"     dest="dc_publisher_tmi"     maxChars="1000"/>
+  <copyField source="dc_identifier_s"    dest="dc_identifier_ti"    maxChars="100"/>
+  <copyField source="dc_publisher_s"     dest="dc_publisher_ti"     maxChars="1000"/>
+  <copyField source="dc_rights_s"        dest="dc_rights_ti"        maxChars="100"/>
   <copyField source="dct_provenance_s"   dest="dct_provenance_ti"   maxChars="1000"/>
-  <copyField source="dct_spatial_sm"     dest="dct_spatial_tmi"     maxChars="10000"/>
   <copyField source="dc_subject_sm"      dest="dc_subject_tmi"      maxChars="10000"/>
-  <copyField source="dct_temporal_sm"    dest="dct_temporal_tmi"    maxChars="10000"/>
   <copyField source="dc_title_s"         dest="dc_title_ti"         maxChars="1000"/>
-  <copyField source="dc_type_sm"         dest="dc_type_tmi"         maxChars="100"/>
   <copyField source="dct_isPartOf_sm"    dest="dct_isPartOf_tmi"    maxChars="1000"/>
-  <copyField source="layer_geom_type_ti" dest="layer_geom_type_ti"     maxChars="100"/>
+  <copyField source="layer_geom_type_s"  dest="layer_geom_type_ti"  maxChars="100"/>
   <copyField source="layer_slug_s"       dest="layer_slug_ti"       maxChars="100"/>
 
   <!-- core text search -->
-  <copyField source="*_s"               dest="text" />
-  <copyField source="*_sm"              dest="text" />
+  <copyField source="*_s"                dest="text" />
+  <copyField source="*_sm"               dest="text" />
 
   <!-- for sorting text fields -->
   <copyField source="dct_provenance_s"   dest="dct_provenance_sort"/>
