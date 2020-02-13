@@ -66,6 +66,12 @@ Rails.application.configure do
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
   # config.action_mailer.raise_delivery_errors = false
 
+  config.action_mailer.delivery_method = :sendmail
+  config.action_mailer.perform_deliveries = true
+  config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.default_options = {from: %{"GeoPortal Bot" <geoportal-bot@#{`hostname`.strip}>}}
+  config.action_mailer.default_url_options = { :host => 'geoportal.library.jhu.edu' }
+
   # Enable locale fallbacks for I18n (makes lookups for any locale fall back to
   # the I18n.default_locale when a translation cannot be found).
   config.i18n.fallbacks = true
@@ -88,6 +94,16 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+
+  # Exception email notification
+  Rails.application.config.middleware.use ExceptionNotification::Rack,
+   # Blacklight uses its own 404 extension we need to ignore separately
+   :ignore_exceptions => ['Blacklight::Exceptions::RecordNotFound'] + ExceptionNotifier.ignored_exceptions,
+   :email => {
+     :email_prefix => "[GeoPortal Error - #{`hostname`.strip}] ",
+     :sender_address => %{"GeoPortal Bot" <geoportal-bot@#{`hostname`.strip}>},
+     :exception_recipients => %w{ amanda.cornwell@jhu.edu reinamurray@jhu.edu }
+   }
 
   # Inserts middleware to perform automatic connection switching.
   # The `database_selector` hash is used to pass options to the DatabaseSelector
