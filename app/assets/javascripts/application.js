@@ -25,4 +25,14 @@
 //= require bootstrap
 //= require blacklight/blacklight
 
+// JHU
+// Required by GeoBlacklight
+//= require handlebars.runtime
+//= require geoblacklight/geoblacklight
+//= require geoblacklight/viewers/viewer
+//= require leaflet-iiif
+//= require esri-leaflet
+//= require Leaflet/leaflet.markercluster/leaflet.markercluster.js
+//= require oboe/oboe-browser.js
+
 //= require_tree .
