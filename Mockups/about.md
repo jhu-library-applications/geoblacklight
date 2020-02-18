@@ -1,0 +1,5 @@
+# About the Geoportal
+[Johns Hopkins University Sheridan Libraries](https://www.library.jhu.edu/) curates a large collection of historical maps, geospatial data and imagery, including the William Hackerman Map Collection, the largest and most comprehensive collection of historically significant maps of Baltimore and Maryland. 
+The Johns Hopkins University geoportal is an inter-departmental library effort to improve geospatial data discovery and access for the Johns Hopkins community. We are proud to present a central platform from which users can search for and obtain geospatial data, scanned maps, imagery and other geospatial resources for research and education purposes. 
+This geoportal is an open, collaborative project built using [GeoBlacklight](https://geoblacklight.org/), a multi-institutional open-source collaboration for finding and sharing geospatial data.  
+Currently, the data in the Johns Hopkins geoportal is publicly available and can be reused without restriction. This geoportal is an ongoing library project, and additional data will be added over time. 
