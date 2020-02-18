@@ -100,7 +100,7 @@ class CatalogController < ApplicationController
     config.add_facet_field 'dct_spatial_sm', :label => 'Place', :limit => 8, collapse: false
     config.add_facet_field 'b1g_genre_sm', :label => 'Genre', :limit => 8, collapse: false
     config.add_facet_field 'solr_year_i', label: 'Year', limit: 10, collapse: false, all: 'Any year', range: {
-      assumed_boundaries: [1100, 2018]
+      assumed_boundaries: [1100, Time.now.year]
       # :num_segments => 6,
       # :segments => true
     }
