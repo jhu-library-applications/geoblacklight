@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
 
+  # Robots
+  get 'robots.:format' => 'robots#robots'
+
   # Static Pages via High Voltage
   get 'about' => 'high_voltage/pages#show', id: 'about'
   get 'contact' => 'high_voltage/pages#show', id: 'contact'

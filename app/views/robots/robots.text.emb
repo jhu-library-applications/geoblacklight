@@ -1,0 +1,18 @@
+# JHU GeoBlacklight robots.txt
+
+<%- if File.exists? "#{Rails.root}/public/sitemap.xml.gz" -%>
+Sitemap: <%= "#{root_url}sitemap.xml.gz" %>
+<%- end -%>
+
+User-agent: *
+Disallow: /?q=
+Disallow: /?f
+Disallow: /catalog.html?f
+Disallow: /catalog.atom
+Disallow: /catalog.rss
+Disallow: /catalog/*/admin
+
+User-agent: AhrefsBot
+Disallow: /
+User-agent: SemrushBot
+Disallow: /
