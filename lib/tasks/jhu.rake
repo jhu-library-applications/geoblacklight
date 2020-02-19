@@ -141,4 +141,11 @@ namespace :jhu do
 
     puts response.code
   end
+
+  desc "Put sample JHU data into solr"
+  task :index_jhu_fixtures => :environment do
+    docs = Dir['spec/fixtures/solr_documents/jhu_documents/*.json'].map { |f| JSON.parse File.read(f) }.flatten
+    Blacklight.default_index.connection.add docs
+    Blacklight.default_index.connection.commit
+  end
 end
