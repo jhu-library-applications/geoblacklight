@@ -27,7 +27,6 @@
     <div id="jhu-content"> <!-- #jhu-content start -->
       <%= render 'shared/top_navbar' %>
       <%= render 'shared/header_navbar' %>
-      <%= render partial: 'shared/modal' %>
       <div id='main-container' role='main' class='container mt-4' data-analytics-id="<%= Settings.GOOGLE_ANALYTICS_ID %>">
         <%= content_for(:container_header) %>
         <%= render :partial=>'/shared/flash_msg', layout: 'shared/flash_messages' %>
