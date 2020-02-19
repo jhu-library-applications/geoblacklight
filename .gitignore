@@ -25,6 +25,8 @@
 /storage/*
 !/storage/.keep
 
+# Sitemap is generated periodically
+public/sitemap.xml*
 /public/assets
 .byebug_history
 
