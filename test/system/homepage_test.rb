@@ -11,7 +11,7 @@ class HomepageTest < ApplicationSystemTestCase
     assert page.has_selector?("div#main-container")     # Main
     assert page.has_selector?("form.search-query-form") # Search Form
     assert page.has_selector?("div#map")                # Map
-    assert page.has_selector?("div.leaflet-pane")        # Leaflet
+    assert page.has_selector?("div.leaflet-pane")       # Leaflet
     assert page.has_selector?("footer")                 # Footer
   end
 

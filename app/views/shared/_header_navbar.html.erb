@@ -12,7 +12,7 @@
   </div>
 </nav>
 
-<% if controller_name == 'catalog' && has_search_parameters? %>
+<% if controller_name == 'catalog' && (has_search_parameters? || params[:action] == 'show') %>
   <nav id="search-navbar" class="navbar navbar-expand-md navbar-light bg-jhu-gray" role="navigation">
     <div class="container">
       <div class='col-lg-8 my-3 col-xs-12'>
