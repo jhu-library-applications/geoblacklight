@@ -1,7 +1,9 @@
 en:
   blacklight:
     application_name: 'JHU GeoPortal'
+    back_to_search: 'Back to search'
     range_limit:
       submit_limit: 'Limit'
     search:
-      start_over: 'Clear search'
+      start_over: 'Start over'
+      clear_search: 'Clear search'

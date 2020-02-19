@@ -33,4 +33,18 @@ class ShowPageTest < ApplicationSystemTestCase
     end
     assert page.has_selector?("footer")                     # Footer
   end
+
+  def test_show_page_search_nav
+    visit '/?utf8=✓&q=&search_field=all_fields'
+    within("div#documents") do
+      find("a", match: :first).click
+    end
+
+    assert page.has_selector?('div.pagination-search-widgets')
+    within("div.pagination-search-widgets") do
+      assert page.has_link?("Start over")                    # Start over
+      assert page.has_link?("Back to search")                # Back to search
+      assert page.has_selector?("div.page-links")            # Pagination
+    end
+  end
 end

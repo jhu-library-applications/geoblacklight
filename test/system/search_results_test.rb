@@ -27,7 +27,7 @@ class SearchResultsPageTest < ApplicationSystemTestCase
     visit '/?q=water'
     assert page.has_content?("Search Results")
     assert page.has_content?("You searched for")
-    assert page.has_link?("Clear search")
+    assert page.has_link?("Start over")
   end
 
   def test_map_clustering
