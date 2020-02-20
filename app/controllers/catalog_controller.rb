@@ -277,6 +277,8 @@ class CatalogController < ApplicationController
 
     # JHU Customizations
     config.show.document_actions.delete(:bookmark)
+    config.show.document_actions.delete(:email)
+    config.show.document_actions.delete(:sms)
 
     # Configure basemap provider for GeoBlacklight maps (uses https only basemap
     # providers with open licenses)
