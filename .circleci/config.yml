@@ -50,7 +50,7 @@ jobs:
       - run: bundle install --path vendor/bundle
       - run: bundle exec rails db:migrate
       - run: bundle exec rake geoblacklight:index:seed
-      - run: bundle exec rake test
+      - run: bundle exec rails test:system test
       # Cache Dependencies
       - type: cache-save
         name: Store bundle cache
