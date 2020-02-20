@@ -53,6 +53,12 @@ bundle exec rake jhu:server
 * View the application at [http://localhost:3000](http://localhost:3000)
 * View the Solr admin panel at [http://localhost:8983](http://localhost:8983)
 
+### Optional - Index JHU test fixtures
+
+```bash
+bundle exec rake jhu:index_jhu_fixtures
+```
+
 ### Optional - Index UMD documents from B1G Geoportal
 
 ```bash
