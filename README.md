@@ -1,6 +1,8 @@
 # geoblacklight
 Johns Hopkins University Geoblacklight Project
 
+[![CircleCI](https://circleci.com/gh/jhu-sheridan-libraries/geoblacklight.svg?style=svg)](https://circleci.com/gh/jhu-sheridan-libraries/geoblacklight)
+
 ## Installation
 
 ### Dependencies
