@@ -1,1 +1,35 @@
-{"dc_identifier_s": "fcb4e970-e54a-4778-876c-f595fe3878d9", "dc_rights_s": "Public", "dc_title_s": "Carte de la Baie de Chesapeake et de la Partie Navigable des Rivieres, James, York, Patowmack, Patuxen, Patapsco, North-East, Choptank et Pokomack.", "layer_slug_s": "fcb4e970-e54a-4778-876c-f595fe3878d9", "solr_geom": "ENVELOPE(-77.75,-75.25,39.75,36.75)", "solr_year_i": 1778, "dc_creator_sm": ["Sartine, Antoine de, comte d'Alby, 1729-1801"], "dc_description_s": "1 map 58 x 86 cm.; Scale: ca. 1:425,000. Hackerman Collection #69.", "dc_format_s": "Mixed", "dc_language_sm": ["French"], "dc_publisher_sm": ["France. De\u0301po\u0302t des cartes et plans de la marine"], "dc_subject_sm": ["Oceans", "Nautical charts"], "dc_type_s": "Image", "dct_references_s": "{\"http://schema.org/url\": \"http://jhir.library.jhu.edu/handle/1774.2/61843\", \"http://schema.org/downloadUrl\": \"http://jscholarship.library.jhu.edu/handle/1774.2/61843/H69.jpg\", \"http://iiif.io/api/image\u2019: \u2018https://image.library.jhu.edu/iiif/js%2F1774.2%2F61843%2FH69/\u2019}", "dct_spatial_sm": ["Chesapeake Bay, United States"], "dct_temporal_sm": ["1778"], "layer_geom_type_s": "Image", "suppressed_b": "False", "dct_provenance_s": "Johns_Hopkins", "geoblacklight_version": "1.0"}
+{
+  "dc_identifier_s": "fcb4e970-e54a-4778-876c-f595fe3878d9",
+  "dc_rights_s": "Public",
+  "dc_title_s": "Carte de la Baie de Chesapeake et de la Partie Navigable des Rivieres, James, York, Patowmack, Patuxen, Patapsco, North-East, Choptank et Pokomack.",
+  "layer_slug_s": "fcb4e970-e54a-4778-876c-f595fe3878d9",
+  "solr_geom": "ENVELOPE(-77.75,-75.25,39.75,36.75)",
+  "solr_year_i": 1778,
+  "dc_creator_sm": [
+    "Sartine, Antoine de, comte d'Alby, 1729-1801"
+  ],
+  "dc_description_s": "1 map 58 x 86 cm.; Scale: ca. 1:425,000. Hackerman Collection #69.",
+  "dc_format_s": "Mixed",
+  "dc_language_sm": [
+    "French"
+  ],
+  "dc_publisher_sm": [
+    "France. Dépôt des cartes et plans de la marine"
+  ],
+  "dc_subject_sm": [
+    "Oceans",
+    "Nautical charts"
+  ],
+  "dc_type_s": "Image",
+  "dct_references_s": "{\"http://schema.org/url\": \"http://jhir.library.jhu.edu/handle/1774.2/61843\", \"http://schema.org/downloadUrl\": \"http://jscholarship.library.jhu.edu/handle/1774.2/61843/H69.jpg\", \"http://iiif.io/api/image\": \"https://image.library.jhu.edu/iiif/js%2F1774.2%2F61843%2FH69\"}",
+  "dct_spatial_sm": [
+    "Chesapeake Bay, United States"
+  ],
+  "dct_temporal_sm": [
+    "1778"
+  ],
+  "layer_geom_type_s": "Image",
+  "suppressed_b": "False",
+  "dct_provenance_s": "Johns_Hopkins",
+  "geoblacklight_version": "1.0"
+}

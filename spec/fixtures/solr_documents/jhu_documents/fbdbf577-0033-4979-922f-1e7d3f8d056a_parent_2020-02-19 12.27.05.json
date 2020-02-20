@@ -1,1 +1,35 @@
-{"dc_identifier_s": "fbdbf577-0033-4979-922f-1e7d3f8d056a", "dc_rights_s": "Public", "dc_title_s": "Maryland, 1824", "layer_slug_s": "fbdbf577-0033-4979-922f-1e7d3f8d056a", "solr_geom": "ENVELOPE(-79.4873,-74.9852,39.7229,37.8866)", "solr_year_i": 1824, "dc_creator_sm": ["Finley, A. (Anthony)", "Young & Delleker"], "dc_description_s": "Description from Mapping Maryland: \"Finley (c. 1790-1840), another Philadelphia publisher and cartographer, produced this map for inclusion in hie \"New American Atlas.\"1 map hand colored; 23.3 x 28.8 cm.; Scale 1:1,500,000.", "dc_format_s": "Mixed", "dc_language_sm": ["English"], "dc_publisher_sm": ["Finley, A. (Anthony)"], "dc_subject_sm": ["Imagery and Base Maps"], "dc_type_s": "Image", "dct_references_s": "{\"http://schema.org/url\": \"http://jhir.library.jhu.edu/handle/1774.2/61372\", \"http://schema.org/downloadUrl\": \"http://jscholarship.library.jhu.edu/handle/1774.2/61372/H50.jpg\", \"http://iiif.io/api/image\u2019: \u2018https://image.library.jhu.edu/iiif/js%2F1774.2%2F61372%2FH50/\u2019}", "dct_spatial_sm": ["Maryland, United States"], "dct_temporal_sm": ["1824"], "layer_geom_type_s": "Image", "suppressed_b": "False", "dct_provenance_s": "Johns_Hopkins", "geoblacklight_version": "1.0"}
+{
+  "dc_identifier_s": "fbdbf577-0033-4979-922f-1e7d3f8d056a",
+  "dc_rights_s": "Public",
+  "dc_title_s": "Maryland, 1824",
+  "layer_slug_s": "fbdbf577-0033-4979-922f-1e7d3f8d056a",
+  "solr_geom": "ENVELOPE(-79.4873,-74.9852,39.7229,37.8866)",
+  "solr_year_i": 1824,
+  "dc_creator_sm": [
+    "Finley, A. (Anthony)",
+    "Young & Delleker"
+  ],
+  "dc_description_s": "Description from Mapping Maryland: \"Finley (c. 1790-1840), another Philadelphia publisher and cartographer, produced this map for inclusion in hie \"New American Atlas.\"1 map hand colored; 23.3 x 28.8 cm.; Scale 1:1,500,000.",
+  "dc_format_s": "Mixed",
+  "dc_language_sm": [
+    "English"
+  ],
+  "dc_publisher_sm": [
+    "Finley, A. (Anthony)"
+  ],
+  "dc_subject_sm": [
+    "Imagery and Base Maps"
+  ],
+  "dc_type_s": "Image",
+  "dct_references_s": "{\"http://schema.org/url\": \"http://jhir.library.jhu.edu/handle/1774.2/61372\", \"http://schema.org/downloadUrl\": \"http://jscholarship.library.jhu.edu/handle/1774.2/61372/H50.jpg\", \"http://iiif.io/api/image\": \"https://image.library.jhu.edu/iiif/js%2F1774.2%2F61372%2FH50\"}",
+  "dct_spatial_sm": [
+    "Maryland, United States"
+  ],
+  "dct_temporal_sm": [
+    "1824"
+  ],
+  "layer_geom_type_s": "Image",
+  "suppressed_b": "False",
+  "dct_provenance_s": "Johns_Hopkins",
+  "geoblacklight_version": "1.0"
+}
