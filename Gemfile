@@ -31,7 +31,6 @@ gem 'bootsnap', '>= 1.4.2', require: false
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
-  gem 'dotenv-rails'
 end
 
 group :development do
@@ -77,3 +76,6 @@ gem 'down', '~>5.0'
 gem 'exception_notification', '~> 4.4.0'
 gem 'sitemap_generator', '~> 6.1'
 gem 'whenever', '~> 1.0'
+
+# ENV
+gem 'dotenv-rails'
