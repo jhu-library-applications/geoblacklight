@@ -11,6 +11,7 @@ class ShowPageTest < ApplicationSystemTestCase
     assert page.has_selector?("nav#header-navbar")          # Static Pages
     assert page.has_selector?("nav#search-navbar")          # Search Form
     assert page.has_selector?("div#main-container")         # Main
+    assert page.has_selector?("[data-analytics-id]")        # Google Analytics
     within("div#main-container") do
       assert page.has_selector?("section.show-document")    # Document
     end

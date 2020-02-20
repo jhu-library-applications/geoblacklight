@@ -95,6 +95,9 @@ Rails.application.configure do
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
 
+  # Google Analytics - Prod
+  config.google_analytics = ENV['GOOGLE_ANALYTICS']
+
   # Exception email notification
   Rails.application.config.middleware.use ExceptionNotification::Rack,
    # Blacklight uses its own 404 extension we need to ignore separately

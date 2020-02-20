@@ -9,6 +9,7 @@ class HomepageTest < ApplicationSystemTestCase
     assert page.has_selector?("header#topnav")          # JHU Branding
     assert page.has_selector?("nav#header-navbar")      # Static Pages
     assert page.has_selector?("div#main-container")     # Main
+    assert page.has_selector?("[data-analytics-id]")    # Google Analytics
     assert page.has_selector?("form.search-query-form") # Search Form
     assert page.has_selector?("div#map")                # Map
     assert page.has_selector?("div.leaflet-pane")       # Leaflet

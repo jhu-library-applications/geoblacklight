@@ -15,6 +15,7 @@
     <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
   <![endif]-->
   <%= javascript_include_tag 'application' %>
+  <%= javascript_include_tag 'analytics' %>
 
   <%= csrf_meta_tags %>
   <% if content_for? :head %>
@@ -27,7 +28,7 @@
     <div id="jhu-content"> <!-- #jhu-content start -->
       <%= render 'shared/top_navbar' %>
       <%= render 'shared/header_navbar' %>
-      <div id='main-container' role='main' class='container mt-4' data-analytics-id="<%= Settings.GOOGLE_ANALYTICS_ID %>">
+      <div id='main-container' role='main' class='container mt-4' data-analytics-id="<%= Rails.configuration.google_analytics %>">
         <%= content_for(:container_header) %>
         <%= render :partial=>'/shared/flash_msg', layout: 'shared/flash_messages' %>
 
