@@ -10,7 +10,7 @@ jobs:
           RAILS_ENV: test
           geoportal_DB_HOST: localhost
           geoportal_DB_USERNAME: geoblacklight
-      - image: solr:8.4.1
+      - image: solr:7.1-alpine
         command: bin/solr -cloud -noprompt -f -p 8985
     steps:
       - checkout
