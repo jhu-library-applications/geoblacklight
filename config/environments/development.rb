@@ -62,7 +62,7 @@ Rails.application.configure do
 
   config.middleware.use ExceptionNotification::Rack,
   :slack => {
-    :webhook_url => "https://hooks.slack.com/services/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",
+    :webhook_url => "[get url]",
     :channel => "#geoblacklight",
     :additional_parameters => {
       :icon_url => "http://image.jpg",
