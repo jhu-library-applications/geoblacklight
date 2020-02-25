@@ -22,6 +22,10 @@ gem 'jbuilder', '~> 2.7'
 # Use Active Model has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
+# Add custom exception handling for email of chat integrations
+gem 'exception_notification'
+gem 'slack-notifier'
+
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
