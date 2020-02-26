@@ -7,7 +7,7 @@ class ApplicationController < ActionController::Base
 
 	def set_notification
 	  request.env['exception_notifier.exception_data'] = { 'SlackExceptionBot' =>  'Greetings'}
-	  #raise "This is an exception"
+	  raise "This is an exception"
 	end
 
 end

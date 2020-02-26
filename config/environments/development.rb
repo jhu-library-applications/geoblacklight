@@ -60,9 +60,11 @@ Rails.application.configure do
   # routes, locales, etc. This feature depends on the listen gem.
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
 
+  webhook_url = ENV["SLACK_URL"]
+
   config.middleware.use ExceptionNotification::Rack,
   :slack => {
-    :webhook_url => "[get url]",
+    :webhook_url => webhook_url,
     :channel => "#geoblacklight",
     :additional_parameters => {
       :icon_url => "http://image.jpg",
