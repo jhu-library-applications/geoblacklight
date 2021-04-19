@@ -54,7 +54,7 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'blacklight', '~> 7.0'
-gem 'geoblacklight', '2.3.0'
+gem 'geoblacklight', '2.4.0'
 gem 'blacklight_advanced_search', '~> 7.0'
 gem 'blacklight_range_limit', '~> 7.0'
 gem 'chosen-rails' #  jquery multiselect plugin for advanced search
