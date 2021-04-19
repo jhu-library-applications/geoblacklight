@@ -49,15 +49,13 @@ GEM
       execjs
     bcrypt (3.1.13)
     bindex (0.8.1)
-    blacklight (7.16.0)
+    blacklight (7.9.0)
       deprecation
       globalid
-      i18n (>= 1.7.0)
       jbuilder (~> 2.7)
       kaminari (>= 0.15)
-      ostruct (>= 0.3.2)
       rails (>= 5.1, < 7)
-      view_component (>= 2.23.0)
+      view_component
     blacklight_advanced_search (7.0.0)
       blacklight (~> 7.0)
       parslet
@@ -262,7 +260,6 @@ GEM
     nokogumbo (2.0.5)
       nokogiri (~> 1.8, >= 1.8.4)
     orm_adapter (0.5.0)
-    ostruct (0.3.3)
     parslet (1.8.2)
     popper_js (1.16.0)
     public_suffix (4.0.6)
@@ -394,7 +391,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  blacklight (~> 7.0)
+  blacklight (= 7.9.0)
   blacklight_advanced_search (~> 7.0)
   blacklight_range_limit (~> 7.0)
   bootsnap (>= 1.4.2)
