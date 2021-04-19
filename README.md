@@ -17,7 +17,7 @@ Johns Hopkins University Geoblacklight Project
 
 ```bash
 cd <your project directory>
-git clone git@github.com:jhu-sheridan-libraries/geoblacklight.git
+git clone git@github.com:jhu-library-applications/geoblacklight.git
 ```
 
 ### Configuration
