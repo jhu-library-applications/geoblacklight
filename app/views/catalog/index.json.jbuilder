@@ -12,8 +12,8 @@ end
 
 json.data do
   json.array! @presenter.documents do |document|
-    doc_presenter = document_presenter(document)
-    document_url = Deprecation.silence(Blacklight::UrlHelperBehavior) { polymorphic_url(url_for_document(document)) }
+    doc_presenter = index_presenter(document)
+    document_url = polymorphic_url(url_for_document(document))
     json.id document.id
     json.type doc_presenter.display_type.first
     json.attributes do
@@ -57,14 +57,10 @@ json.included do
             json.hits item.hits
           end
           json.links do
-            Deprecation.silence(Blacklight::FacetsHelperBehavior) do
-              if facet_in_params?(facet.name, item.value)
-                Deprecation.silence(Blacklight::SearchState) do
-                  json.remove search_action_path(search_state.remove_facet_params(facet.name, item.value))
-                end
-              else
-                json.self path_for_facet(facet.name, item.value, only_path: false)
-              end
+            if facet_in_params?(facet.name, item.value)
+              json.remove search_action_path(search_state.remove_facet_params(facet.name, item.value))
+            else
+              json.self path_for_facet(facet.name, item.value, only_path: false)
             end
           end
         end
