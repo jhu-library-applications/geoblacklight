@@ -174,8 +174,6 @@ GEM
     ffi-compiler (1.0.1)
       ffi (>= 1.0.0)
       rake
-    font-awesome-rails (4.7.0.7)
-      railties (>= 3.2, < 7)
     geo_combine (0.5.1)
       activesupport
       json-schema
@@ -184,21 +182,18 @@ GEM
       rsolr
       sanitize
       thor
-    geoblacklight (2.4.0)
+    geoblacklight (3.0.0)
       blacklight (~> 7.0)
       coderay
       config
       deprecation
       faraday (~> 1.0)
       faraday_middleware (~> 1.0.0.rc1)
-      font-awesome-rails
       geo_combine (~> 0.4)
-      geoblacklight-icons (>= 0.2)
       handlebars_assets
       mime-types
-      rails (~> 5.0)
-      webpacker
-    geoblacklight-icons (1.4.0)
+      rails (>= 5.2.4, < 6.1)
+      webpacker (~> 4.0)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
     handlebars_assets (0.23.9)
@@ -413,7 +408,7 @@ DEPENDENCIES
   dotenv-rails
   down (~> 5.0)
   exception_notification (~> 4.4.0)
-  geoblacklight (= 2.4.0)
+  geoblacklight (= 3.0.0)
   high_voltage (~> 3.1)
   jbuilder (~> 2.7)
   jquery-rails
