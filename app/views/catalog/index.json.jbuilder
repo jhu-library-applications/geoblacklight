@@ -36,7 +36,7 @@ end
 json.centroids do
   json.array! @response.documents do |document|
     json.id document.id
-    json.title document._source['dc_title_s']
+    json.title document._source[Settings.FIELDS.TITLE]
     json.centroid document.centroid
   end
 end
