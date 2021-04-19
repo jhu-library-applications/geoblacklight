@@ -38,6 +38,12 @@ Test with Bundler 2.1.4
 bundle
 ```
 
+### Install Yarn Packages
+
+```
+yarn install
+```
+
 ### Run the Database Migrations
 
 ```bash
