@@ -53,7 +53,7 @@ class HomepageTest < ApplicationSystemTestCase
       assert page.has_link?(href: "mailto:gis-request@lists.johnshopkins.edu")
 
       # Copyright
-      assert page.has_content?("© 2020 Johns Hopkins University")
+      assert page.has_content?("© #{Time.now.year} Johns Hopkins University")
 
       # Legal Menu
       assert page.has_link?("Privacy")
