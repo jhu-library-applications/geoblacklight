@@ -1,7 +1,7 @@
 {
   "dc_type_s": "Dataset",
   "layer_geom_type_s": "Polygon",
-  "dc_creator_sm": [
+  "dct_creator_sm": [
     "Cornell Institute for Resource Information Sciences (Cornell IRIS)",
     "NYS Department of Agriculture and Markets"
   ],

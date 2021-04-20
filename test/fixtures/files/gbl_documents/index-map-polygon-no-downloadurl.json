@@ -1,7 +1,7 @@
 {
   "dc_type_s": "Dataset",
   "layer_geom_type_s": "Raster",
-  "dc_creator_sm": [
+  "dct_creator_sm": [
     "U.S. Geological Survey"
   ],
   "dc_publisher_sm": [

@@ -1,7 +1,7 @@
 {
   "layer_geom_type_s": "Polygon",
   "dc_type_s": "Dataset",
-  "dc_creator_sm": [
+  "dct_creator_sm": [
     "Uganda Bureau of Statistics"
   ],
   "gbl_indexYear_i": 2005,

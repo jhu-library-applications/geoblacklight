@@ -1,7 +1,7 @@
 {
   "layer_geom_type_s": "Raster",
   "dc_type_s": "Dataset",
-  "dc_creator_sm": [
+  "dct_creator_sm": [
     "Seafloor Mapping Lab"
   ],
   "gbl_indexYear_i": 2005,

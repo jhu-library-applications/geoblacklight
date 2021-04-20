@@ -1,7 +1,7 @@
 {
   "layer_geom_type_s": "Point",
   "dc_type_s": "Dataset",
-  "dc_creator_sm": [
+  "dct_creator_sm": [
     "GIS Lab, Newman Library, Baruch CUNY"
   ],
   "dct_isPartOf_sm": [
