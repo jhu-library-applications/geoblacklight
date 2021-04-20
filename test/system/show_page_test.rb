@@ -49,4 +49,12 @@ class ShowPageTest < ApplicationSystemTestCase
       assert page.has_selector?("div.page-links")            # Pagination
     end
   end
+
+  def test_show_geom_type_icon
+    visit '/catalog/99-0001-test'
+
+    within("div.document") do
+      assert page.has_selector?("span.blacklight-icon-table")# Table icon
+    end
+  end
 end

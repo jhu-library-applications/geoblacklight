@@ -1,0 +1,10 @@
+<% if document[Settings.FIELDS.GEOM_TYPE].kind_of?(Array)  %>
+  <% document[Settings.FIELDS.GEOM_TYPE].each do |type| %>
+    <%= geoblacklight_icon(type, classes: 'svg_tooltip') %>
+  <% end %>
+<% else %>
+  <%= geoblacklight_icon(document[Settings.FIELDS.GEOM_TYPE], classes: 'svg_tooltip') %>
+<% end %>
+
+<%= geoblacklight_icon(document[Settings.FIELDS.PROVENANCE], classes: 'svg_tooltip') %>
+<%= geoblacklight_icon(document[Settings.FIELDS.RIGHTS], classes: 'svg_tooltip') %>
