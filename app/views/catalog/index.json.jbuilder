@@ -17,11 +17,12 @@ json.data do
     json.id document.id
     json.type doc_presenter.display_type.first
     json.attributes do
-      doc_presenter.fields_to_render.each do |field_name, field|
+      doc_presenter.fields_to_render.each do |field_name, field, field_presenter|
         json.partial! 'field', field: field,
                                field_name: field_name,
                                document_url: document_url,
                                doc_presenter: doc_presenter,
+                               field_presenter: field_presenter,
                                view_type: 'index'
       end
     end
@@ -35,7 +36,7 @@ end
 json.centroids do
   json.array! @response.documents do |document|
     json.id document.id
-    json.title document._source['dc_title_s']
+    json.title document._source[Settings.FIELDS.TITLE]
     json.centroid document.centroid
   end
 end

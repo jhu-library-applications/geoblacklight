@@ -53,14 +53,14 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
-gem 'blacklight', '~> 7.0'
-gem 'geoblacklight', '~> 2.0'
+gem 'blacklight', '7.9.0'
+gem 'geoblacklight', '3.3.0'
 gem 'blacklight_advanced_search', '~> 7.0'
 gem 'blacklight_range_limit', '~> 7.0'
 gem 'chosen-rails' #  jquery multiselect plugin for advanced search
 
 group :development, :test do
-  gem 'solr_wrapper', '>= 0.3'
+  gem 'solr_wrapper', '>= 3.1.0'
 end
 
 gem 'rsolr', '>= 1.0', '< 3'

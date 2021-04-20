@@ -14,7 +14,7 @@ class CatalogController < ApplicationController
     config.advanced_search[:url_key] ||= 'advanced'
     config.advanced_search[:query_parser] ||= 'edismax'
     config.advanced_search[:form_solr_parameters] ||= {}
-    config.advanced_search[:form_solr_parameters]['facet.field'] ||= %W[dct_provenance_s dc_creator_sm]
+    config.advanced_search[:form_solr_parameters]['facet.field'] ||= [Settings.FIELDS.PROVENANCE, Settings.FIELDS.CREATOR]
     config.advanced_search[:form_solr_parameters]['facet.query'] ||= ''
     config.advanced_search[:form_solr_parameters]['facet.limit'] ||= -1
     config.advanced_search[:form_solr_parameters]['facet.sort'] ||= 'index'
@@ -41,7 +41,7 @@ class CatalogController < ApplicationController
     #
     config.default_document_solr_params = {
      :qt => 'document',
-     :q => '{!raw f=layer_slug_s v=$id}'
+     :q => "{!raw f=#{Settings.FIELDS.UNIQUE_KEY} v=$id}"
     }
 
 
@@ -97,35 +97,35 @@ class CatalogController < ApplicationController
     #    :years_25 => { :label => 'within 25 Years', :fq => "pub_date:[#{Time.now.year - 25 } TO *]" }
     # }
 
-    config.add_facet_field 'dct_spatial_sm', :label => 'Place', :limit => 8, collapse: false
-    config.add_facet_field 'b1g_genre_sm', :label => 'Genre', :limit => 8, collapse: false
-    config.add_facet_field 'solr_year_i', label: 'Year', limit: 10, collapse: false, all: 'Any year', range: {
+    config.add_facet_field Settings.FIELDS.SPATIAL_COVERAGE, :label => 'Place', :limit => 8, collapse: false
+    config.add_facet_field Settings.FIELDS.B1G_GENRE, :label => 'Genre', :limit => 8, collapse: false
+    config.add_facet_field Settings.FIELDS.YEAR, label: 'Year', limit: 10, collapse: false, all: 'Any year', range: {
       assumed_boundaries: [1100, Time.now.year]
       # :num_segments => 6,
       # :segments => true
     }
-    config.add_facet_field 'dc_subject_sm', :label => 'Subject', :limit => 8, collapse: false
+    config.add_facet_field Settings.FIELDS.SUBJECT, :label => 'Subject', :limit => 8, collapse: false
 
     config.add_facet_field 'time_period', :label => 'Time Period', :query => {
-      '1500s' => { :label => '1500s', :fq => "solr_year_i:[1500 TO 1599]" },
-      '1600s' => { :label => '1600s', :fq => "solr_year_i:[1600 TO 1699]" },
-      '1700s' => { :label => '1700s', :fq => "solr_year_i:[1700 TO 1799]" },
-      '1800-1849' => { :label => '1800-1849', :fq => "solr_year_i:[1800 TO 1849]" },
-      '1850-1899' => { :label => '1850-1899', :fq => "solr_year_i:[1850 TO 1899]" },
-      '1900-1949' => { :label => '1900-1949', :fq => "solr_year_i:[1900 TO 1949]" },
-      '1950-1999' => { :label => '1950-1999', :fq => "solr_year_i:[1950 TO 1999]" },
-      '2000-2004' => { :label => '2000-2004', :fq => "solr_year_i:[2000 TO 2004]" },
-      '2005-2009' => { :label => '2005-2009', :fq => "solr_year_i:[2005 TO 2009]" },
-      '2010-2014' => { :label => '2010-2014', :fq => "solr_year_i:[2010 TO 2014]" },
-      '2015-present' => { :label => '2015-present', :fq => "solr_year_i:[2015 TO #{Time.now.year}]"}
+      '1500s' => { :label => '1500s', :fq => "#{Settings.FIELDS.YEAR}:[1500 TO 1599]" },
+      '1600s' => { :label => '1600s', :fq => "#{Settings.FIELDS.YEAR}:[1600 TO 1699]" },
+      '1700s' => { :label => '1700s', :fq => "#{Settings.FIELDS.YEAR}:[1700 TO 1799]" },
+      '1800-1849' => { :label => '1800-1849', :fq => "#{Settings.FIELDS.YEAR}:[1800 TO 1849]" },
+      '1850-1899' => { :label => '1850-1899', :fq => "#{Settings.FIELDS.YEAR}:[1850 TO 1899]" },
+      '1900-1949' => { :label => '1900-1949', :fq => "#{Settings.FIELDS.YEAR}:[1900 TO 1949]" },
+      '1950-1999' => { :label => '1950-1999', :fq => "#{Settings.FIELDS.YEAR}:[1950 TO 1999]" },
+      '2000-2004' => { :label => '2000-2004', :fq => "#{Settings.FIELDS.YEAR}:[2000 TO 2004]" },
+      '2005-2009' => { :label => '2005-2009', :fq => "#{Settings.FIELDS.YEAR}:[2005 TO 2009]" },
+      '2010-2014' => { :label => '2010-2014', :fq => "#{Settings.FIELDS.YEAR}:[2010 TO 2014]" },
+      '2015-present' => { :label => '2015-present', :fq => "#{Settings.FIELDS.YEAR}:[2015 TO #{Time.now.year}]"}
     }, collapse: false
 
-    config.add_facet_field 'dc_publisher_sm', :label => 'Publisher', :limit => 8
-    config.add_facet_field 'dc_creator_sm', :label => 'Creator', :limit => 8
+    config.add_facet_field Settings.FIELDS.PUBLISHER, :label => 'Publisher', :limit => 8
+    config.add_facet_field Settings.FIELDS.CREATOR, :label => 'Creator', :limit => 8
 
     config.add_facet_field Settings.FIELDS.PROVENANCE, label: 'Institution', limit: 8, partial: "icon_facet"
 
-    config.add_facet_field 'dc_type_sm', label: 'Type', limit: 8
+    config.add_facet_field Settings.FIELDS.TYPE, label: 'Type', limit: 8
 
     # Have BL send all facet field names to Solr, which has been the default
     # previously. Simply remove these lines if you'd rather use Solr request
@@ -266,14 +266,16 @@ class CatalogController < ApplicationController
     config.add_results_collection_tool(:sort_widget)
     config.add_results_collection_tool(:per_page_widget)
     config.add_show_tools_partial(:bookmark, partial: 'bookmark_control', if: :render_bookmarks_control?)
+    config.add_show_tools_partial(:citation)
     config.add_show_tools_partial(:email, callback: :email_action, validator: :validate_email_params)
     config.add_show_tools_partial(:sms, if: :render_sms_action?, callback: :sms_action, validator: :validate_sms_params)
 
     # Custom tools for GeoBlacklight
     config.add_show_tools_partial :web_services, if: proc { |_context, _config, options| options[:document] && (Settings.WEBSERVICES_SHOWN & options[:document].references.refs.map(&:type).map(&:to_s)).any? }
     config.add_show_tools_partial :metadata, if: proc { |_context, _config, options| options[:document] && (Settings.METADATA_SHOWN & options[:document].references.refs.map(&:type).map(&:to_s)).any? }
-    config.add_show_tools_partial :exports, partial: 'exports', if: proc { |_context, _config, options| options[:document] }
-    config.add_show_tools_partial :data_dictionary, partial: 'data_dictionary', if: proc { |_context, _config, options| options[:document] }
+    config.add_show_tools_partial :carto, partial: 'carto', if: proc { |_context, _config, options| options[:document] && options[:document].carto_reference.present? }
+    config.add_show_tools_partial :arcgis, partial: 'arcgis', if: proc { |_context, _config, options| options[:document] && options[:document].arcgis_urls.present? }
+    config.add_show_tools_partial :data_dictionary, partial: 'data_dictionary', if: proc { |_context, _config, options| options[:document] && options[:document].data_dictionary_download.present? }
 
     # JHU Customizations
     config.show.document_actions.delete(:bookmark)
