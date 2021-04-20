@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <schema name="geoblacklight-schema" version="1.7">
-  <uniqueKey>layer_slug_s</uniqueKey>
+  <uniqueKey>id</uniqueKey>
   <fields>
     <field name="_version_" type="long"   stored="true" indexed="true"/>
     <field name="timestamp" type="date"   stored="true" indexed="true" default="NOW"/>
