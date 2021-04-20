@@ -58,7 +58,7 @@ set :bundle_path, -> { shared_path.join('bundle') }
 namespace :deploy do
   task :group_permissions do
     on roles(:app, :web) do
-      execute "chown -R #{ENV['CAP_USER']}:catalyst #{release_path}"
+      execute "chown -R #{ENV['CAP_USER']}:geoportal #{release_path}"
       execute "chmod -R g+w #{release_path}"
     end
   end
