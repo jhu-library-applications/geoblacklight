@@ -54,6 +54,7 @@ FIELDS:
   :TYPE: 'dc_type_s'
   :UNIQUE_KEY: 'id'
   :B1G_GENRE: 'b1g_genre_sm'
+  :CENTROID: 'dcat_centroid_ss'
 
 # Institution deployed at
 INSTITUTION: 'Johns Hopkins University'
