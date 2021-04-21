@@ -5,14 +5,16 @@ ruby '2.6.5'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.0'
-# Use sqlite3 as the database for Active Record
-gem 'sqlite3', '~> 1.4'
+
+gem 'mysql2'
+
 # Use Puma as the app server
 gem 'puma', '~> 4.3'
 # Use SCSS for stylesheets
 gem 'sass-rails', '>= 6'
 # Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker
-gem 'webpacker', '~> 4.0'
+gem 'webpacker', '~> 4.0', require: false
+
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
 gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
@@ -27,6 +29,17 @@ gem 'jbuilder', '~> 2.7'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
+
+
+# Capistrano
+
+gem 'capistrano', '~> 3.10', require: false
+gem 'capistrano-chruby', require: false
+gem 'capistrano-dotenv', require: false
+gem 'capistrano-passenger', require: false
+gem "capistrano-rails", "~> 1.3", require: false
+gem 'capistrano-yarn', require: false
+gem 'capistrano-locally', require: false
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -61,6 +74,7 @@ gem 'chosen-rails' #  jquery multiselect plugin for advanced search
 
 group :development, :test do
   gem 'solr_wrapper', '>= 3.1.0'
+  gem 'sqlite3'
 end
 
 gem 'rsolr', '>= 1.0', '< 3'
