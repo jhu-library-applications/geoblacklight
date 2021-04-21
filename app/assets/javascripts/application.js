@@ -34,5 +34,6 @@
 //= require esri-leaflet
 //= require Leaflet/leaflet.markercluster/leaflet.markercluster.js
 //= require oboe/oboe-browser.js
+//= require './sentry.js'
 
 //= require_tree .
