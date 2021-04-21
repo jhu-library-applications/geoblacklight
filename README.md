@@ -81,6 +81,12 @@ Stop any instances of GeoBlacklight before running this command.
 RAILS_ENV=test bundle exec rake ci
 ```
 
+Add RUBYOPT=W0 to suppress deprecation warnings.
+
+```bash
+RUBYOPT=W0 RAILS_ENV=test bundle exec rake ci
+```
+
 ----
 
 ### Homepage Imagery
