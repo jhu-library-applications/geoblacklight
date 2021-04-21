@@ -48,9 +48,8 @@ class HomepageTest < ApplicationSystemTestCase
       assert page.has_link?(href: "mailto:dataservices@jhu.edu")
 
       # Mailing Lists
-      assert page.has_content?("Mailing Lists")
-      assert page.has_link?(href: "mailto:sympa@lists.johnshopkins.edu?subject=subscribe%20dmsdatamanagement")
-      assert page.has_link?(href: "mailto:gis-request@lists.johnshopkins.edu")
+      assert page.has_content?("Mailing List")
+      assert page.has_link?(href: "mailto:dataservices-request@lists.johnshopkins.edu?subject=subscribe%20dataservices")
 
       # Copyright
       assert page.has_content?("© #{Time.now.year} Johns Hopkins University")

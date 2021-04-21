@@ -8,7 +8,7 @@ task :ci do
   success = true
   SolrWrapper.wrap(shared_solr_opts.merge(port: 8985, instance_dir: 'tmp/blacklight-core')) do |solr|
     solr.with_collection(name: "blacklight-core", dir: Rails.root.join("solr", "conf").to_s) do
-      system 'RAILS_ENV=test bundle exec rake geoblacklight:index:seed'
+      system 'RAILS_ENV=test bundle exec rake jhu:index:seed'
       system 'RAILS_ENV=test TESTOPTS="-v" bundle exec rails test:system test' || success = false
     end
   end
@@ -29,7 +29,7 @@ namespace :jhu do
         puts "Solr running at http://localhost:8983/solr/blacklight-core/, ^C to exit"
         puts ' '
         begin
-          Rake::Task['geoblacklight:solr:seed'].invoke
+          Rake::Task['jhu:index:seed'].invoke
           system "bundle exec rails s -b 0.0.0.0"
           sleep
         rescue Interrupt
@@ -49,7 +49,7 @@ namespace :jhu do
         solr.with_collection(name: "blacklight-core", dir: Rails.root.join("solr", "conf").to_s) do
           puts "Solr running at http://localhost:8985/solr/#/blacklight-core/, ^C to exit"
           begin
-            Rake::Task['geoblacklight:solr:seed'].invoke
+            Rake::Task['jhu:index:seed'].invoke
             sleep
           rescue Interrupt
             puts "\nShutting down..."
@@ -70,7 +70,7 @@ namespace :jhu do
       solr.with_collection(name: "blacklight-core", dir: Rails.root.join("solr", "conf").to_s) do
         puts "Solr running at http://localhost:8983/solr/#/blacklight-core/, ^C to exit"
         begin
-          Rake::Task['geoblacklight:solr:seed'].invoke
+          Rake::Task['jhu:index:seed'].invoke
           sleep
         rescue Interrupt
           puts "\nShutting down..."
@@ -79,6 +79,7 @@ namespace :jhu do
     end
   end
 
+  # @TODO: GBL v1.0 not Aardvark
   desc "Download the B1G Geoportal data.json file."
   task :b1g_download_data do
     require 'down'
@@ -91,6 +92,7 @@ namespace :jhu do
     end
   end
 
+  # @TODO: GBL v1.0 not Aardvark
   desc "Download the UMD B1G Geoportal data."
   task :b1g_umd_data => [:b1g_download_data] do
     begin
@@ -121,6 +123,7 @@ namespace :jhu do
     end
   end
 
+  # @TODO: GBL v1.0 not Aardvark
   desc "Index the UMD B1G Geoportal data."
   task :b1g_index_umd_data => [:b1g_umd_data] do
     require 'net/http'
@@ -142,10 +145,25 @@ namespace :jhu do
     puts response.code
   end
 
-  desc "Put sample JHU data into solr"
-  task :index_jhu_fixtures => :environment do
-    docs = Dir['spec/fixtures/solr_documents/jhu_documents/*.json'].map { |f| JSON.parse File.read(f) }.flatten
-    Blacklight.default_index.connection.add docs
-    Blacklight.default_index.connection.commit
+  namespace :index do
+    desc 'Put all sample data into solr'
+    task :seed => :environment do
+      docs = Dir['test/fixtures/files/**/*.json'].map { |f| JSON.parse File.read(f) }.flatten
+      Blacklight.default_index.connection.add docs
+      Blacklight.default_index.connection.commit
+    end
+
+    desc 'Put jhu sample data into solr'
+    task :jhu => :environment do
+      docs = Dir['test/fixtures/files/jhu_documents/*.json'].map { |f| JSON.parse File.read(f) }.flatten
+      Blacklight.default_index.connection.add docs
+      Blacklight.default_index.connection.commit
+    end
+
+    desc 'Delete all sample data from solr'
+    task :delete_all => :environment do
+      Blacklight.default_index.connection.delete_by_query '*:*'
+      Blacklight.default_index.connection.commit
+    end
   end
 end

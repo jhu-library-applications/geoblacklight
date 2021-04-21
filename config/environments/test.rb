@@ -42,6 +42,8 @@ Rails.application.configure do
 
   # Print deprecation notices to the stderr.
   config.active_support.deprecation = :stderr
+  config.active_support.deprecation = :silence if ENV["RUBYOPT"].include?('W0')
+  Deprecation.default_deprecation_behavior = :silence if ENV["RUBYOPT"].include?('W0')
 
   # Google Analytics - TEST
   config.google_analytics = 'UA-BANANAS-1'

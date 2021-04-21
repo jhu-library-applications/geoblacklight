@@ -5,6 +5,6 @@ module CentroidConcern
 
   # Return String of document centroid value
   def centroid
-    fetch(:b1g_centroid_ss, '')
+    fetch(Settings.FIELDS.CENTROID, '')
   end
 end
