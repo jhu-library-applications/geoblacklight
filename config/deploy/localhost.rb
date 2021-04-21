@@ -5,6 +5,7 @@
 set :stage, :production
 set :rails_env, "production"
 
+
 username = ENV['CAP_USER'] || ENV['USERNAME']
 
 server "localhost", user: username, roles: %{web}

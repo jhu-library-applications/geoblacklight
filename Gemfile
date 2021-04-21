@@ -74,6 +74,7 @@ gem 'chosen-rails' #  jquery multiselect plugin for advanced search
 
 group :development, :test do
   gem 'solr_wrapper', '>= 3.1.0'
+  gem 'sqlite3'
 end
 
 gem 'rsolr', '>= 1.0', '< 3'
