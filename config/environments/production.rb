@@ -98,16 +98,6 @@ Rails.application.configure do
   # Google Analytics - Prod
   config.google_analytics = ENV['GOOGLE_ANALYTICS']
 
-  # Exception email notification
-  Rails.application.config.middleware.use ExceptionNotification::Rack,
-   # Blacklight uses its own 404 extension we need to ignore separately
-   :ignore_exceptions => ['Blacklight::Exceptions::RecordNotFound'] + ExceptionNotifier.ignored_exceptions,
-   :email => {
-     :email_prefix => "[GeoPortal Error - #{`hostname`.strip}] ",
-     :sender_address => %{"GeoPortal Bot" <geoportal-bot@#{`hostname`.strip}>},
-     :exception_recipients => %w{ amanda.cornwell@jhu.edu reinamurray@jhu.edu }
-   }
-
   # Inserts middleware to perform automatic connection switching.
   # The `database_selector` hash is used to pass options to the DatabaseSelector
   # middleware. The `delay` is used to determine how long to wait after a write

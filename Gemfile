@@ -87,9 +87,12 @@ gem 'jquery-rails'
 # Static Pages
 gem 'high_voltage', '~> 3.1'
 gem 'down', '~>5.0'
-gem 'exception_notification', '~> 4.4.0'
 gem 'sitemap_generator', '~> 6.1'
 gem 'whenever', '~> 1.0'
 
 # ENV
 gem 'dotenv-rails'
+
+# Error monitoring
+gem "sentry-ruby"
+gem "sentry-rails"
