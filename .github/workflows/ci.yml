@@ -9,10 +9,7 @@
 
 name: CI
 
-on:
-  push:
-    branches:
-      - '*'
+on: push
 
 env:
   cache-prefix: '04-21-2021-C'
