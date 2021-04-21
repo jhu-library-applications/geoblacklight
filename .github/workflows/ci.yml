@@ -1,0 +1,83 @@
+# Working GeoPortal BL7 GitHub Action
+#
+# This workflow uses actions that are not certified by GitHub.
+# They are provided by a third-party and are governed by
+# separate terms of service, privacy policy, and support
+# documentation.
+# This workflow will download a prebuilt Ruby version, install dependencies and run tests with Rake
+# For more information see: https://github.com/marketplace/actions/setup-ruby-jruby-and-truffleruby
+
+name: CI
+
+on:
+  push:
+    branches:
+      - '*'
+
+env:
+  cache-prefix: '04-21-2021-C'
+  # these are all referenced in our app's database.yml for test
+  SOLR_PORT: 8985
+  SOLR_URL: http://127.0.0.1:8985/solr/blacklight-core
+  SOLR_VERSION: 8.4.1
+jobs:
+  tests:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Installed shared-mime-info
+        run: sudo apt-get install shared-mime-info
+
+      - name: Checkout code repo
+        uses: actions/checkout@v2
+
+      - name: Ruby - Set up
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '2.6.5'
+          bundler-cache: true
+
+      - name: Cache solr download
+        uses: actions/cache@v2
+        env:
+          cache-name: cache-solr-download
+        with:
+          path: ./tmp/solr
+          key: ${{ env.cache-name }}-${{ env.cache-prefix }}
+
+      - name: Node - Install node for Rails JS runtime
+        uses: actions/setup-node@v2
+        with:
+          node-version: '12'
+
+      - name: Apt - Install dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get -y install libvips-tools ffmpeg mediainfo poppler-utils
+
+      - name: Rails - Yarn install
+        env:
+          RAILS_ENV: test
+        run: |
+          yarn install
+
+      - name: Rails assets
+        env:
+          RAILS_ENV: test
+        run: |
+          bundle exec rails assets:precompile
+
+      - name: Rails - Database setup
+        env:
+          RAILS_ENV: test
+        run: |
+          bundle exec rails db:create
+          bundle exec rails db:migrate
+
+      - name: Tests - Run tests
+        env:
+          RAILS_ENV: test
+          RUBYOPT: W0
+        run: |
+          bundle exec rake ci
