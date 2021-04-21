@@ -62,12 +62,6 @@ jobs:
         run: |
           yarn install
 
-      - name: Rails assets
-        env:
-          RAILS_ENV: test
-        run: |
-          bundle exec rails assets:precompile
-
       - name: Rails - Database setup
         env:
           RAILS_ENV: test
