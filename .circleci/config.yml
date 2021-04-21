@@ -49,7 +49,7 @@ jobs:
       - run: gem install bundler:2.1.4
       - run: bundle install --path vendor/bundle
       - run: bundle exec rails db:migrate
-      - run: bundle exec rake geoblacklight:index:seed
+      - run: bundle exec rake jhu:index:seed
       - run: bundle exec rails test:system test
       # Cache Dependencies
       - type: cache-save

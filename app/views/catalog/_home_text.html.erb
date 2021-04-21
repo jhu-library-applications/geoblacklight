@@ -59,7 +59,7 @@
   <div class='row'>
     <div class='col-12'>
       <h2 class='font-weight-light h3'>Search an area like Maryland or zoom out to explore</h2>
-      <%= content_tag :div, '', id: 'map', aria: { label: t('geoblacklight.map.label') }, data: { map: 'home', 'catalog-path'=> search_catalog_path , 'map-bbox' => '-79.48 37.88 -74.48 40.00', basemap: geoblacklight_basemap, leaflet_options: leaflet_options } %>
+      <%= content_tag :div, '', id: 'map', aria: { label: t('geoblacklight.map.label') }, data: { map: 'home', 'catalog-path'=> search_catalog_path , 'map-geom' => '{"type":"Polygon","coordinates":[[[-79.48,37.88],[-79.48,37.88],[-74.48,40.00],[-74.48,40.00]]]}', basemap: geoblacklight_basemap, leaflet_options: leaflet_options } %>
     </div>
   </div>
 </div>
