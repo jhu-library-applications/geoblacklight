@@ -13,7 +13,6 @@ on: push
 
 env:
   cache-prefix: '04-21-2021-C'
-  # these are all referenced in our app's database.yml for test
   SOLR_PORT: 8985
   SOLR_URL: http://127.0.0.1:8985/solr/blacklight-core
   SOLR_VERSION: 8.4.1
@@ -29,19 +28,15 @@ jobs:
       - name: Checkout code repo
         uses: actions/checkout@v2
 
+      - name: Start solr via docker-compose
+        run: |
+          docker-compose up
+
       - name: Ruby - Set up
         uses: ruby/setup-ruby@v1
         with:
           ruby-version: '2.6.5'
           bundler-cache: true
-
-      - name: Cache solr download
-        uses: actions/cache@v2
-        env:
-          cache-name: cache-solr-download
-        with:
-          path: ./tmp/solr
-          key: ${{ env.cache-name }}-${{ env.cache-prefix }}
 
       - name: Node - Install node for Rails JS runtime
         uses: actions/setup-node@v2
