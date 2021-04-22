@@ -1,6 +1,9 @@
+try {
+    Sentry.init({
+        dsn: '<%= ENV['SENTRY_DSN'] %>'
+    });
+}
+catch(err) {
+    console.log('Javascript error capturing disabled.');
+}
 
-Sentry.init({
-  dsn: '<%= ENV['SENTRY_DSN'] %>',
-  integrations: [new Sentry.Integrations.BrowserTracing()],
-  tracesSampleRate: 1.0,
-});
