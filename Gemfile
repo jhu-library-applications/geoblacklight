@@ -102,5 +102,5 @@ gem "sentry-ruby"
 gem "sentry-rails"
 
 # Generates thumbnail images
-gem 'geoblacklight_sidecar_images'
+gem 'geoblacklight_sidecar_images', git: 'https://github.com/geoblacklight/geoblacklight_sidecar_images.git', branch: 'feature/aardvark'
 gem 'sidekiq'

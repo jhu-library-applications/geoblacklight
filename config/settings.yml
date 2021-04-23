@@ -58,6 +58,7 @@ FIELDS:
 
 # Institution deployed at
 INSTITUTION: 'Johns Hopkins University'
+INSTITUTION_LOCAL_NAME: 'Geoportal'
 
 # Metadata shown in tool panel
 METADATA_SHOWN:

@@ -19,6 +19,11 @@ class CatalogController < ApplicationController
     config.advanced_search[:form_solr_parameters]['facet.limit'] ||= -1
     config.advanced_search[:form_solr_parameters]['facet.sort'] ||= 'index'
 
+    # Map views
+    config.view.mapview.partials = [:index]
+    config.view['split'].title = "List view"
+    config.view['mapview'].title = "Map view"
+
     # Ensures that JSON representations of Solr Documents can be retrieved using
     # the path /catalog/:id/raw
     # Please see https://github.com/projectblacklight/blacklight/pull/2006/
