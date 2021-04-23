@@ -49,12 +49,13 @@ FIELDS:
   :LANGUAGE: 'dct_language_sm'
   :LAYER_MODIFIED: 'gbl_mdModified_dt'
   :OVERLAP_FIELD: 'solr_bboxtype'
-  :SOURCE: 'dct_source_sm'
+  :SOURCE: 'dct_isPartOf_sm'
   :SUPPRESSED: 'gbl_suppressed_b'
   :TYPE: 'dc_type_s'
   :UNIQUE_KEY: 'id'
   :B1G_GENRE: 'b1g_genre_sm'
   :CENTROID: 'dcat_centroid_ss'
+  :MEMBER_OF: 'pcdm_memberOf_sm'
 
 # Institution deployed at
 INSTITUTION: 'Johns Hopkins University'

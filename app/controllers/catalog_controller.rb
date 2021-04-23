@@ -168,7 +168,7 @@ class CatalogController < ApplicationController
 
     config.add_show_field Settings.FIELDS.DESCRIPTION, label: 'Description', itemprop: 'description', helper_method: :render_value_as_truncate_abstract
 
-    config.add_show_field Settings.FIELDS.PART_OF, label: 'Collection', itemprop: 'isPartOf'
+    config.add_show_field Settings.FIELDS.MEMBER_OF, label: 'Collection', itemprop: 'isPartOf', link_to_facet: true
     config.add_show_field Settings.FIELDS.SPATIAL_COVERAGE, label: 'Place(s)', itemprop: 'spatial', link_to_facet: true
     config.add_show_field Settings.FIELDS.SUBJECT, label: 'Subject(s)', itemprop: 'keywords', link_to_facet: true
     config.add_show_field Settings.FIELDS.TEMPORAL, label: 'Year', itemprop: 'temporal'
@@ -248,11 +248,11 @@ class CatalogController < ApplicationController
     # label in pulldown is followed by the name of the SOLR field to sort by and
     # whether the sort is ascending or descending (it must be asc or desc
     # except in the relevancy case).
-    config.add_sort_field 'score desc, dc_title_sort asc', :label => 'Relevance'
-    config.add_sort_field "#{Settings.FIELDS.YEAR} desc, dc_title_sort asc", :label => 'Year (Newest first)'
-    config.add_sort_field "#{Settings.FIELDS.YEAR} asc, dc_title_sort asc", :label => 'Year (Oldest first)'
-    config.add_sort_field 'dc_title_sort asc', :label => 'Title (A-Z)'
-    config.add_sort_field 'dc_title_sort desc', :label => 'Title (Z-A)'
+    config.add_sort_field 'score desc, dct_title_sort asc', :label => 'Relevance'
+    config.add_sort_field "#{Settings.FIELDS.YEAR} desc, dct_title_sort asc", :label => 'Year (Newest first)'
+    config.add_sort_field "#{Settings.FIELDS.YEAR} asc, dct_title_sort asc", :label => 'Year (Oldest first)'
+    config.add_sort_field 'dct_title_sort asc', :label => 'Title (A-Z)'
+    config.add_sort_field 'dct_title_sort desc', :label => 'Title (Z-A)'
 
     # If there are more than this many search results, no spelling ("did you
     # mean") suggestion is offered.
