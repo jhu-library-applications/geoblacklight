@@ -140,6 +140,7 @@ GEM
     config (3.1.0)
       deep_merge (~> 1.2, >= 1.2.1)
       dry-validation (~> 1.0, >= 1.0.0)
+    connection_pool (2.2.5)
     crass (1.0.6)
     deep_merge (1.2.1)
     deprecation (1.1.0)
@@ -231,6 +232,13 @@ GEM
       mime-types
       rails (>= 5.2.4, < 6.2)
       rgeo-geojson
+    geoblacklight_sidecar_images (0.8.0)
+      geoblacklight (>= 3.3)
+      image_processing (~> 1.6)
+      mimemagic (~> 0.3)
+      mini_magick (~> 4.9.4)
+      rails (>= 5.2, < 6.2)
+      statesman (>= 3.4)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
     handlebars_assets (0.23.9)
@@ -250,6 +258,9 @@ GEM
       ffi-compiler (>= 1.0, < 2.0)
     i18n (1.8.10)
       concurrent-ruby (~> 1.0)
+    image_processing (1.12.1)
+      mini_magick (>= 4.9.5, < 5)
+      ruby-vips (>= 2.0.17, < 3)
     jbuilder (2.11.2)
       activesupport (>= 5.0.0)
     jquery-rails (4.4.0)
@@ -285,6 +296,10 @@ GEM
     mime-types (3.3.1)
       mime-types-data (~> 3.2015)
     mime-types-data (3.2021.0225)
+    mimemagic (0.4.3)
+      nokogiri (~> 1)
+      rake
+    mini_magick (4.9.5)
     mini_mime (1.0.3)
     mini_portile2 (2.5.0)
     minitest (5.14.4)
@@ -346,6 +361,7 @@ GEM
     rb-fsevent (0.10.4)
     rb-inotify (0.10.1)
       ffi (~> 1.0)
+    redis (4.2.5)
     regexp_parser (2.1.1)
     responders (3.0.1)
       actionpack (>= 5.0)
@@ -358,6 +374,8 @@ GEM
       builder (>= 2.1.2)
       faraday (>= 0.9.0)
     ruby-progressbar (1.11.0)
+    ruby-vips (2.1.0)
+      ffi (~> 1.12)
     ruby2_keywords (0.0.4)
     rubyzip (2.3.0)
     sanitize (5.2.3)
@@ -388,6 +406,10 @@ GEM
     sentry-ruby-core (4.3.2)
       concurrent-ruby
       faraday
+    sidekiq (6.2.1)
+      connection_pool (>= 2.2.2)
+      rack (~> 2.0)
+      redis (>= 4.2.0)
     sitemap_generator (6.1.2)
       builder (~> 3.0)
     solr_wrapper (3.1.2)
@@ -410,6 +432,7 @@ GEM
     sshkit (1.21.2)
       net-scp (>= 1.1.2)
       net-ssh (>= 2.8.0)
+    statesman (8.0.2)
     thor (1.1.0)
     tilt (2.0.10)
     turbolinks (5.2.1)
@@ -476,6 +499,7 @@ DEPENDENCIES
   dotenv-rails (~> 2.7.6)
   down (~> 5.0)
   geoblacklight (= 3.3.0)
+  geoblacklight_sidecar_images
   high_voltage (~> 3.1)
   jbuilder (~> 2.7)
   jquery-rails
@@ -489,6 +513,7 @@ DEPENDENCIES
   selenium-webdriver
   sentry-rails
   sentry-ruby
+  sidekiq
   sitemap_generator (~> 6.1)
   solr_wrapper (>= 3.1.0)
   spring
