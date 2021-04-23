@@ -127,7 +127,9 @@ class CatalogController < ApplicationController
 
     config.add_facet_field Settings.FIELDS.TYPE, label: 'Type', limit: 8
 
-    config.add_facet_field Settings.FIELDS.SOURCE, :label => 'Source', :limit => 8, collapse: false
+    config.add_facet_field Settings.FIELDS.SOURCE, :label => 'Source', :limit => 8
+
+    config.add_facet_field Settings.FIELDS.MEMBER_OF, :label => 'Collection', :limit => 8
 
     # Have BL send all facet field names to Solr, which has been the default
     # previously. Simply remove these lines if you'd rather use Solr request

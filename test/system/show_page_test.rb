@@ -59,12 +59,24 @@ class ShowPageTest < ApplicationSystemTestCase
   end
 
   def test_show_page_relations_link
-    visit "/catalog/princeton-1r66j405w"
+    # JHU Atlas Fixture
+    visit "/catalog/hopkins-912X14FOLIOc1-35326-27"
 
     # Browse Relations
-    click_link("Browse all 4 records...")
+    click_link("Browse all 28 records...")
     within("span.page-entries") do
-      assert page.has_content?("4")
+      assert page.has_content?("28")
+    end
+  end
+
+  def test_show_page_collection_link
+    # JHU Atlas Fixture
+    visit "/catalog/hopkins-912X14FOLIOc1-35326-27"
+
+    # Collection Link
+    click_link("hopkins-citysheets-001")
+    within("span.page-entries") do
+      assert page.has_content?("58")
     end
   end
 end
