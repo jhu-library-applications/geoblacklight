@@ -87,6 +87,14 @@ Add RUBYOPT=W0 to suppress deprecation warnings.
 RUBYOPT=W0 RAILS_ENV=test bundle exec rake ci
 ```
 
+### Docker for Solr
+
+To run the GeoPortal's Solr server via Docker, start Docker on your local computer, and run the following command:
+
+```bash
+docker-compose --env-file .env.development up
+```
+
 ----
 
 ### Homepage Imagery
