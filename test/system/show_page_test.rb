@@ -57,4 +57,14 @@ class ShowPageTest < ApplicationSystemTestCase
       assert page.has_selector?("span.blacklight-icon-table")# Table icon
     end
   end
+
+  def test_show_page_relations_link
+    visit "/catalog/princeton-1r66j405w"
+
+    # Browse Relations
+    click_link("Browse all 4 records...")
+    within("span.page-entries") do
+      assert page.has_content?("4")
+    end
+  end
 end

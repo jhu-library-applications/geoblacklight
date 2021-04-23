@@ -27,7 +27,6 @@ Duplicate the .example files in the project and remove the .example string from 
 ```bash
 cp .example.env.development .env.development  
 cp .example.env.test .env.test  
-cp config/database.yml.example config/database.yml
 ```
 
 ### Bundle RubyGems
