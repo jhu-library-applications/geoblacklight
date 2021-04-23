@@ -8,6 +8,12 @@ class CatalogController < ApplicationController
 
   configure_blacklight do |config|
 
+    # Search widgets
+    # :view_type_group needs to be earlier in the controller for the list view to be displayed first
+    config.add_results_collection_tool(:sort_widget)
+    config.add_results_collection_tool(:per_page_widget)
+    config.add_results_collection_tool(:view_type_group)
+
     # Advanced config values
     # default advanced config values
     config.advanced_search ||= Blacklight::OpenStructWithHashAccess.new
@@ -268,8 +274,6 @@ class CatalogController < ApplicationController
     config.add_nav_action(:search_history, partial: 'blacklight/nav/search_history')
 
     # Tools from Blacklight
-    config.add_results_collection_tool(:sort_widget)
-    config.add_results_collection_tool(:per_page_widget)
     config.add_show_tools_partial(:bookmark, partial: 'bookmark_control', if: :render_bookmarks_control?)
     config.add_show_tools_partial(:citation)
     config.add_show_tools_partial(:email, callback: :email_action, validator: :validate_email_params)
