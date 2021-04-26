@@ -1,16 +1,3 @@
-GIT
-  remote: https://github.com/geoblacklight/geoblacklight_sidecar_images.git
-  revision: 9cddd8b7fe456a3d8fd18e58bbf547c0db488db9
-  branch: feature/aardvark
-  specs:
-    geoblacklight_sidecar_images (0.8.0)
-      geoblacklight (>= 3.3)
-      image_processing (~> 1.6)
-      mimemagic (~> 0.3)
-      mini_magick (~> 4.9.4)
-      rails (>= 5.2, < 6.2)
-      statesman (>= 3.4)
-
 GEM
   remote: https://rubygems.org/
   specs:
@@ -245,6 +232,13 @@ GEM
       mime-types
       rails (>= 5.2.4, < 6.2)
       rgeo-geojson
+    geoblacklight_sidecar_images (0.8.1)
+      geoblacklight (>= 3.3)
+      image_processing (~> 1.6)
+      mimemagic (~> 0.3)
+      mini_magick (~> 4.9.4)
+      rails (>= 5.2, < 6.2)
+      statesman (>= 3.4)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
     handlebars_assets (0.23.9)
@@ -505,7 +499,7 @@ DEPENDENCIES
   dotenv-rails (~> 2.7.6)
   down (~> 5.0)
   geoblacklight (= 3.3.0)
-  geoblacklight_sidecar_images!
+  geoblacklight_sidecar_images (= 0.8.1)
   high_voltage (~> 3.1)
   jbuilder (~> 2.7)
   jquery-rails
