@@ -15,7 +15,7 @@ set :deploy_to, "/opt/geoportal"
 # Default value for :format is :airbrussh.
 # set :format, :airbrussh
 
-set :chruby_ruby, 'ruby-2.6.5'
+set :chruby_ruby, 'ruby-2.7.3'
 
 set :passenger_restart_with_touch, true
 set :passenger_roles, :web
