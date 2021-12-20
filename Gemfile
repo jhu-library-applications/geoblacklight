@@ -100,3 +100,7 @@ gem 'dotenv-rails', '~> 2.7.6'
 # Error monitoring
 gem "sentry-ruby"
 gem "sentry-rails"
+
+# Generates thumbnail images
+gem 'geoblacklight_sidecar_images', '0.8.1'
+gem 'sidekiq'

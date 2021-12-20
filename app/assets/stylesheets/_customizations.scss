@@ -35,3 +35,38 @@ $link-color: $blue;
 
 // Homepage Images
 .home-page-linked-searches img { width: 100%;}
+
+// Sidecar
+span.list-view.document-counter {
+  display: inline-block;
+  float: left;
+  position: relative;
+  top: 1rem;
+  font-weight: 500;
+}
+.media img, .media span.icon, .media span.icon.square {
+  min-width: 100px;
+  max-width: 100px;
+}
+
+.icon.square svg {
+  height: 100px;
+  width: 100px;
+}
+
+.media span.icon.square span.blacklight-icons {
+  height: 100%;
+  width: 100%;
+}
+
+.search-widgets .view-type .caption {
+  position: inherit;
+  width: inherit;
+  height: inherit;
+  padding: inherit;
+  margin: inherit;
+  overflow: inherit;
+  clip: inherit;
+  white-space: inherit;
+  border: none;
+}
